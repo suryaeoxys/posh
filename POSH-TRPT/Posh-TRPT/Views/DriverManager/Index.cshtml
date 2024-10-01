@@ -1,0 +1,247 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accessor
+<h1 class="text-left mb-3" style="color : #501872">Driver Management </h1>
+<div class="row" id="listDriver">
+    <div class="col-md-12">
+        <div class="table-responsive table customTable mt-2">
+            <table id="tblDriver" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Driver Name</th>
+                        <th>Email ID</th>
+                        <th>Inspection Expiry date</th>
+                        <th>Contact Number</th>
+                        <th>Doc Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyRod">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="detailDriver" style="display:none;">
+    <h1 class="text-center mb-3">Driver Management </h1>
+    <div class="form-group">
+        <div class="card mb-3 border-0" style="max-width: 100%">
+            <div class="card-header text-center  text-white text-bold" style="background-color:#501872; font-size:20px;">
+                Personal  Information
+            </div>
+            <div class="row g-0">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-sm-2">
+                            <div class="card p-2">
+                                <div class="card-body p-0">
+                                    <img style="width: 100%; height: 150px; object-fit:cover;" class="img-thumbnail" src="" id="proImage" alt="ProfilePhoto" asp-append-version="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <h6 class="card-title" hidden>UserId <input hidden class="form-control" id="userId" placeholder="userid" type="text"></h6>
+                                    <h6 class="card-title">Driver Name: <input class="form-control" id="dname" placeholder="Name" type="text" disabled></h6>
+                                    <h6 class="card-title">Contact Number: <input class="form-control" id="mobile" placeholder="Mobile" type="text" disabled></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <h6 class="card-title">Email ID: <input class="form-control" id="demail" placeholder="Email" type="email" disabled></h6>
+                                    <h6 class="card-title">Date Of Birth: <input class="form-control" id="dob" placeholder="Date Of Birth" type="text" disabled></h6>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-3 border-0" style="max-width: 100%">
+            <div class="card mb-3 border-0" style="max-width: 100%">
+                <div class="card-header text-center  text-white text-bold" style="background-color:#501872; font-size:20px;">
+                    Vehicle Information
+                </div>
+                <div class="row g-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card border-0">
+                                    <div class="card-body">
+                                        <h6 class="card-title" hidden>VehicleId <input hidden class="form-control" id="vId" placeholder="Name" disabled type="text"></h6>
+                                        <h6 class="card-title">VIN Number: <input class="form-control" id="vehicle_Identification_Number" disabled placeholder="VIN Number" type="text"></h6>
+                                        <h6 class="card-title">Make: <input class="form-control" id="make" placeholder="Make" disabled type="text"></h6>
+                                        <h6 class="card-title">Model: <input class="form-control" id="model" placeholder="Model" disabled type="text"></h6>
+                                        <h6 class="card-title">Vehicle Inspection Expiry date: <input class="form-control" id="Vehicle_Inspection" disabled placeholder="Vehicle Inspection Expiry Date" type="text"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card border-0">
+                                    <div class="card-body">
+                                        <h6 class="card-title">Mfg. Year: <input class="form-control" id="year" placeholder="Year" disabled type="text"></h6>
+                                        <h6 class="card-title">Color: <input class="form-control" id="color" placeholder="Color" type="text" disabled></h6>
+                                        <h6 class="card-title">Vehicle License Plate: <input class="form-control" id="Vehicle_Plate" disabled placeholder="Comment" type="text"></h6>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3 border-0" style="max-width: 100%">
+        <div class="card mb-3 border-0" style="max-width: 100%">
+            <div class="card-header text-center  text-white text-bold" style="background-color:#501872; font-size:20px;">
+                Address Information
+            </div>
+            <div class="row g-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <h6 class="card-title" hidden>AddressId <input hidden class="form-control" id="addrId" placeholder="Address Id" type="text"></h6>
+                                    <h6 class="card-title">Country Name: <input class="form-control" id="countryName" disabled placeholder="Country Name" type="text"></h6>
+                                    <h6 class="card-title">State Name: <input class="form-control" id="stateName" disabled placeholder="State Name" type="text"></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <h6 class="card-title">City Name: <input class="form-control" id="cityName" placeholder="City Name" disabled type="text"></h6>
+                                    <h6 class="card-title">Social Security Number: <input disabled class="form-control" id="social_Security_Number" placeholder="Social Security Number" type="text"></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3 border-0" style="max-width: 100%">
+        <div class="card mb-3 border-0" style="max-width: 100%">
+            <div class="card-header text-center  text-white text-bold" style="background-color:#501872; font-size:20px;">
+                Documents Information
+            </div>
+            <div class="row g-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    Driving Licence Document:
+                                    <h6 class="card-title" hidden>DocumnetId <input hidden class="form-control" id="docId" placeholder="Document Id" type="text"></h6>
+                                    <img style="width: 100%; height: 280px; object-fit:contain;" class="img-thumbnail" src="" id="drivingLicenceDocName" alt="drivingLicenceDoc" asp-append-version="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    Insurance Document:
+                                    <img style="width: 100%; height: 280px; object-fit:contain;" class="img-thumbnail" src="" id="insuarnceDocName" alt="insuarnceDoc" asp-append-version="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    Vehicle Registration Document:
+                                    <img style="width: 100%; height: 280px; object-fit:contain;" class="img-thumbnail" src="" id="vehicleRegistrationDocName" alt="vehicleRegistrationDoc" asp-append-version="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    Vehicle Inspection Document:
+                                    <img style="width: 100%; height: 280px; object-fit:contain;" class="img-thumbnail" src="" id="vehicleInspectionDocName" alt="vehicleInspectionDoc" asp-append-version="true" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-3 border-0" style="max-width: 100%">
+        <div class="card mb-3 border-0" style="max-width: 100%">
+            <div class="card-header text-center  text-white text-bold" style="background-color:#501872; font-size:20px;">
+                Manage Approval
+            </div>
+            <div class="row g-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    Document Status
+                                    <select class="form-control mb-2" id="bindStatusDropdown" ></select>
+                                    <span role="alert" id="statusDropError" style="display:none">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    Ride Category
+                                    <select class="form-control mb-2" id="bindRideCategoryDropdown" ></select>
+                                    <span role="alert" id="rcDropError" style="display:none">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    Note
+                                    <textarea class="form-control" id="driverComment" placeholder="Comment" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card border-0">
+                                <div class="card-body text-end">                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card border-0">
+                        <div class="card-body">                                
+                                <button class="btn btn-secondary mx-2 pl-5 btn btn text-white" style="background-color:#501872; font-size:18px;" id="driverStatusUpdateSubmitBtnId"></button>
+                            <button class="btn btn-secondary mx-2 pl-5 btn btn-danger  text-white ml-3" style="font-size:18px;" id="canid">Go Back</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="~/js/custom/driverManagement.js"></script>
+}
+
+
+

@@ -1,0 +1,27 @@
+﻿#nameError {
+    display: none;
+    font-size: 0.8em;
+}
+
+    #nameError.visible {
+        display: block;
+    }
+
+input.invalid {
+    border-color: red;
+}
+.button {
+    background-color: #A15BE4;
+    border-color: #A15BE4;
+    color: white;
+}
+body {
+    /*background-image: url(../../assets/images/background1.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.error-txt{
+    position:absolute;
+    top:10px;
+    right:10px;
+}

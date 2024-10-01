@@ -1,0 +1,140 @@
+﻿@model Posh_TRPT_Models.DTO.LoginDTO.LoginDTO
+
+@{
+	Layout = null;
+	ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>POSH-SignIn</title>
+
+	<!-- Font-Awesome CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<!-- --------Boostrap--------- -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+
+
+	<!-- Custom css -->
+	<link rel="stylesheet" href="/css/custom/login.css">
+	<!-- Responsive css -->
+	<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+	<div class="main">
+		@* text-end *@
+		<div class="error-txt" style=" position:absolute;
+    top:10px;
+    right:10px;">
+			@if (ViewBag.ErrorMessage != null)
+			{
+					<span class="error text-danger font-weight-bold"><b>@ViewBag.ErrorMessage</b></span>
+			}
+		</div>
+		<!-- ------------responsive logo----------- -->
+		<div class="logo d-none response">
+			<img src="Images/Posh_A2.png" alt="" />
+
+		</div>
+
+		<!-- ----------Main sign-in start------------- -->
+		<div class="login  ">
+			<!-- --------Left Coloum Start--------- -->
+			<div class="col-7 left-col">
+				<!-- ------------desktop view logo----------- -->
+				<div class="logo">
+					<img src="Images/Posh_A2.png" alt="" />
+
+				</div>
+				<!-- -----------Left Car Image------------- -->
+				<div class="main-image">
+					<img src="Images/car-image.png" alt="">
+				</div>
+			</div>
+			<!-- --------Left Coloum Start--------- -->
+			<!-- -----------Right Coloum start----------- -->
+			<div class="col-5   right-col d-flex justify-content-center align-items-center">
+
+				<!-- ----------------Ellipse image-------------------- -->
+
+				<!-- ------------------Sig-in Form--------------------------- -->
+				<div class="sing-in">
+
+					<h3 class="signin-text mb-3"> Sign In</h3>
+					<form method="post" asp-action="SignIn" id="signForm" class="w-100" >
+						@Html.AntiForgeryToken()
+						<div class="form-group ">
+
+							<span class="user">
+								<span class="email"><i class="fas fa-envelope"></i></span>
+								<label for="email" class="py-1">Email</label>
+								<input type="email" name="email" asp-for="Email"  type="email" id="signInEmailId"  class="form-control"
+									   placeholder="Enter email address" value="@ViewBag.Email">
+							</span>
+
+						</div>
+						 <span id="emailIdErrorr" class="font-weight-bold" style="display:none"></span>
+						<div class="form-group responsive ">
+							<span class="user" id="show_hide_password">
+								<span class="pass"><i class="fas fa-lock"></i></span>
+								<label for="password" class="py-1">Password</label>
+								<input type="password" name="password" class="form-control"
+									   placeholder="Enter password" asp-for="Password" maxlength="50" id="password" value="@ViewBag.Password">
+								<span class="eye">
+
+										<i class="bi bi-eye-slash" id="togglePassword"></i>
+
+								</span>
+							</span>
+
+						</div>
+						<span id="pswIdErrorr" class="font-weight-bold" style="display:none"></span>
+						<span id="emailpswError" class="font-weight-bold" style="display:none"></span>
+						<div class=" form-check d-flex justify-content-between py-3 ">
+							<span class="forget">
+								<input type="checkbox" asp-for="RememberMe" name="RememberMe" class="form-check-input"
+									   id="RememberMe">
+								<label class="form-check-label" asp-for="RememberMe">Remember Me</label>
+							</span>
+
+					   <span class="forget"><a asp-action="ForgotPassword" asp-controller="Account">Forget Password ?</a></span>
+						</div>
+
+
+						<button type="submit" class="btn btn-class  rounded-pill w-100" id="submitForm" onsubmit="return validateForm();">Sign In</button>
+
+					</form>
+				</div>
+				<!-- ------------------Sig-in Form End--------------------------- -->
+			</div>
+			<!-- -----------Right Coloum End----------- -->
+		</div>
+		<!-- ----------Main sign-in end------------- -->
+	</div>
+
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+			integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+			crossorigin="anonymous"></script>
+	<!--All Validation script start-->
+	<!--End -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/custom/signInJS.js"></script>
+
+
+</body>
+</html>

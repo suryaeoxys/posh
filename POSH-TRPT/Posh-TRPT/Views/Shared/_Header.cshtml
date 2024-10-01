@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<div class="LogoImg">
+    <!-- Logo -->
+    @if (Context.Session.GetInt32("RoleId") == 1)
+    {
+        <a asp-action="Index" asp-controller="Home"><img src="~/Images/Logo.PNG" class="img-fluid logo"></a>
+    }
+    else
+    {
+        <a><img src="~/Images/Logo.PNG" class="img-fluid logo"></a>
+    }
+</div>
+
+<nav class="navbar navbar-static-top" role="navigation">
+
+</nav>

@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="AccountLinkCreated" xml:space="preserve">
+    <value>Account link created successfully</value>
+  </data>
+  <data name="AccountLinkCreationFailed" xml:space="preserve">
+    <value>Account link creation failed</value>
+  </data>
+  <data name="Android" xml:space="preserve">
+    <value>Android</value>
+  </data>
+  <data name="AssetsHtml" xml:space="preserve">
+    <value>\assets\verified.html</value>
+  </data>
+  <data name="BookingStatusAccepted" xml:space="preserve">
+    <value>Booking request has been accepted</value>
+  </data>
+  <data name="BookingStatusCancelled" xml:space="preserve">
+    <value>Booking has been cancelled</value>
+  </data>
+  <data name="BookingStatusCompleted" xml:space="preserve">
+    <value>BookingStatusCompleted</value>
+  </data>
+  <data name="BookingStatusDeclined" xml:space="preserve">
+    <value>Booking request has been declined</value>
+  </data>
+  <data name="CheckBoxNotChecked" xml:space="preserve">
+    <value>Please check the box!</value>
+  </data>
+  <data name="CreatePaymentIntentResponseDataFound" xml:space="preserve">
+    <value>Create payment intent response data found</value>
+  </data>
+  <data name="CreatePaymentIntentResponseDataNotFound" xml:space="preserve">
+    <value>Create payment intent response data not found</value>
+  </data>
+  <data name="CustomerCreated" xml:space="preserve">
+    <value>Customer created successfully!</value>
+  </data>
+  <data name="CustomerDetailsFound" xml:space="preserve">
+    <value>Customer details found successfully</value>
+  </data>
+  <data name="CustomerDetailsNotFound" xml:space="preserve">
+    <value>Customer details not found</value>
+  </data>
+  <data name="CustomerRegistrationFailed" xml:space="preserve">
+    <value>Customer registration failed!</value>
+  </data>
+  <data name="DocumentIsDeleted" xml:space="preserve">
+    <value>Document does not found or deleted!</value>
+  </data>
+  <data name="DocumentUpdateFailed" xml:space="preserve">
+    <value>Document update failed!</value>
+  </data>
+  <data name="DocumentUpdateSuccess" xml:space="preserve">
+    <value>Document updated successfully!</value>
+  </data>
+  <data name="DocumentUploadedFailed" xml:space="preserve">
+    <value>Documents upload failed!</value>
+  </data>
+  <data name="DocumentUploadedSuccess" xml:space="preserve">
+    <value>Documents uploaded successfully!</value>
+  </data>
+  <data name="DriverDetailsFound" xml:space="preserve">
+    <value>Driver details found successfully</value>
+  </data>
+  <data name="DriverDetailsNotFound" xml:space="preserve">
+    <value>Driver details not found</value>
+  </data>
+  <data name="DriverPayoutStatusFalse" xml:space="preserve">
+    <value>Driver payout status is false</value>
+  </data>
+  <data name="DriverProfileCreated" xml:space="preserve">
+    <value>Driver profile created successfully!</value>
+  </data>
+  <data name="DriverProfileCreationFailed" xml:space="preserve">
+    <value>Driver profile creation failed!</value>
+  </data>
+  <data name="DriversAvailable" xml:space="preserve">
+    <value>Drivers available</value>
+  </data>
+  <data name="DriversNotAvailable" xml:space="preserve">
+    <value>Drivers not available</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>Something went wrong!</value>
+  </data>
+  <data name="Failed" xml:space="preserve">
+    <value>failed</value>
+  </data>
+  <data name="InValidVerificationCode" xml:space="preserve">
+    <value>Verification code didn't match! Try re-register!</value>
+  </data>
+  <data name="KeyFound" xml:space="preserve">
+    <value>EphemeralKey Found</value>
+  </data>
+  <data name="KeyNotFound" xml:space="preserve">
+    <value>EphemeralKey Not Found</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="ModelStateInvalid" xml:space="preserve">
+    <value>Invalid Model State!</value>
+  </data>
+  <data name="NoPaymetMethodFound" xml:space="preserve">
+    <value>No payment method found.</value>
+  </data>
+  <data name="NullValve" xml:space="preserve">
+    <value>Password is null or empty</value>
+  </data>
+  <data name="OperationCancelled" xml:space="preserve">
+    <value>Request was cancelled by user</value>
+  </data>
+  <data name="PasswordChangedSuccess" xml:space="preserve">
+    <value>Password changed successfully!</value>
+  </data>
+  <data name="PasswordChangedUnSuccess" xml:space="preserve">
+    <value>Password changed failed!</value>
+  </data>
+  <data name="PaymetMethodFound" xml:space="preserve">
+    <value>Payment method found</value>
+  </data>
+  <data name="PayoutStatusConnectAccountFalse" xml:space="preserve">
+    <value>Payout status of connect account is false</value>
+  </data>
+  <data name="PayoutStatusConnectAccountTrue" xml:space="preserve">
+    <value>Payout status of connect account is true</value>
+  </data>
+  <data name="ProfilePic" xml:space="preserve">
+    <value>ProfilePhotos</value>
+  </data>
+  <data name="ProvideMobileNumber" xml:space="preserve">
+    <value>Please provide mobile number!</value>
+  </data>
+  <data name="PushNotification" xml:space="preserve">
+    <value>Push Notification sent successfully</value>
+  </data>
+  <data name="PushNotificationFailed" xml:space="preserve">
+    <value>Unable to send the push notification</value>
+  </data>
+  <data name="SetupIntentResponseDataFound" xml:space="preserve">
+    <value>Setup payment intent response data found</value>
+  </data>
+  <data name="SetupIntentResponseDataNotFound" xml:space="preserve">
+    <value>Setup payment intent response data not found</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>SignIn</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>success</value>
+  </data>
+  <data name="TipsReviewNotProvided" xml:space="preserve">
+    <value>No Tips or Review has been given</value>
+  </data>
+  <data name="TipsReviewSuccess" xml:space="preserve">
+    <value>Tips or Review has been added successfully</value>
+  </data>
+  <data name="UploadDocument" xml:space="preserve">
+    <value>UploadDocuments</value>
+  </data>
+  <data name="UserBookingDetaillsFound" xml:space="preserve">
+    <value>User's booking detail found successfully!</value>
+  </data>
+  <data name="UserBookingDetaillsNotFound" xml:space="preserve">
+    <value>User's booking detail not found!</value>
+  </data>
+  <data name="UserExists" xml:space="preserve">
+    <value>User already exists!</value>
+  </data>
+  <data name="UserNotExists" xml:space="preserve">
+    <value>User doesn't exists!</value>
+  </data>
+</root>

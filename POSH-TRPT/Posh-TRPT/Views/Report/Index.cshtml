@@ -1,0 +1,105 @@
+﻿<h1 class="text-center"> Report </h1>
+
+
+<div class="container-fluid">
+    <div class="row heading-section">
+    </div>
+    <div class="create-from">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card wizard">
+                    <form method="post">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-4">
+                                <b><label>Start Date <span class="text-danger">*</span></label></b>
+                                <div class="caldender-card d-flex align-items-center">
+                                    <input type="date" id="StartDate" class="form-control mb-0 border-2 " placeholder="yyyy-mm-dd" />
+                                    @* <span class="text-red" id="error"></span> *@
+                                </div>
+                                <span class="small" role="alert" id="error" style="display:none"></span>
+
+                            </div>
+                            <div class="col-md-4">
+                                <b><label>End date<span class="text-danger">*</span></label></b>
+                                <div class="caldender-card d-flex align-items-center">
+                                    <input type="date" id="EndDate" class="form-control mb-0 border-2 " placeholder="yyyy-mm-dd" />
+                                    @* <span class="text-md-center text-red" id="eError"></span> *@
+                                </div>
+                                <span class="small" role="alert" id="eError" style="display:none"></span>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-4">
+                                <b><label class="pb-2 text-bold text-fuchsia">Select Order Type</label></b>(optional)
+                                <select id="bindAllStatusData" class="form-control border-3 mb-2">
+                                    <option class=" border-bottom border-2 p-2" value="0">All</option>
+                                    <option value="4">Completed</option>
+                                    <option value="6">Cancelled</option>
+                                    <option value="5">Declined</option>
+                                    <option value="9">System Declined</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <b>
+                                    <label class="pb-2 text-bold">Select Driver</label>
+                                </b>(optional)
+                                <select class="form-control border-3 mb-2" id="bindAllDriversData"></select>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-9 d-flex justify-content-end">
+                                <a class="btn btn-warning mb-2" asp-controller="Report" asp-action="Index"> Reset</a>
+                                <input type="submit" value="Create Report" onclick="BindAllFilterdOrderData(event)" class="btn btn-primary mb-2" />
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="row text-lg-center" id="loadershowhide" style="display: none">
+    <div class="loader"></div>
+</div>
+
+<div class="row" id="table" style="display: none">
+    <div class="col-md-12 d-flex justify-content-end">
+        <a href="" class="btn btn-outline-primary" id="execlFile" target="_blank" media="">Export Excel</a>
+        <a href="" class="btn btn-outline-primary" id="pdfFile" target="_blank" media="">Generate-pdf</a>
+    </div>
+    <div class="table customTable">
+        <table class="table table-bordered  border-2 table-hover table-responsive" id="tableCompletedRow">
+            <thead class="border border-1">
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Driver</th>
+                    <th>Rider</th>
+                    <th>PU Time</th>
+                    <th>DO Time</th>
+                    <th>Pick-Up Address</th>
+                    <th>Drop-Off Address</th>
+                    <th>Price</th>
+                    <th>TollFee</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+
+@section Scripts
+    {
+    @* <link href="~/css/custom/dashboard.css" rel="stylesheet" /> *@
+    <script type="text/javascript" charset="utf8" src="~/js/custom/report.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <link href="~/css/custom/stylesheet.css" rel="stylesheet" />
+} 

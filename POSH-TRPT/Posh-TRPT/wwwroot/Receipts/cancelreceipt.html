@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+
+<body style="font-family:sans-serif">
+    <table style="width: 920px; margin: auto; font-size: 15px; padding-bottom: 40px;">
+        <tr>
+            <td>
+                <table style="width: 100%;">
+                    <tr>
+                        <td><img src="{logoPath}" alt="" style=" max-width: 100%; width: 150px; height: auto;"></td>
+
+                        <td style="text-align: end; font-weight: 100; color: #868686;"><span>{CurrentTime}</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin-top: 30px;">
+                    <tr>
+                        <td style="font-size: 28px; font-weight: 500; color: #010101;">
+                            Here's your receipt for your ride, {RiderName}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin-top: 20px;">
+                    <tr>
+                        <td style="font-weight: 500; color: #868686;">
+                            We hope you enjoyed your ride
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="padding: 10px 0px; width: 100%;">
+                    <tr>
+                        <td style="color: #010101; font-size: 18px; font-weight: 500; width: 50%;"><span>Total</span></td>
+                        <td style="text-align: end; font-weight: 600; color: #010101; font-size: 18px;"><span>${Total}</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="border-bottom: 2px solid #c7c7c7; width: 100%;"></table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="padding: 10px 0px; width: 100%;">
+                    <tr>
+
+                        <td style="color: #868686; font-weight: 500; width: 50%;"><span>Trip Charge</span></td>
+                        <td style="text-align: end; font-weight: 600; color: #868686; font-size: 15px;"><span>${subtotal}</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="border-bottom: 2px solid #c7c7c7; width: 100%;"></table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="padding: 10px 0px; width: 100%;">
+                    <tr>
+
+                        <td style="color: #010101; font-weight: 500; padding: 5px 0px; width: 50%;"><span>Subtotal</span></td>
+                        <td style="text-align: end; font-weight: 600; color: #010101; font-size: 15px;"><span>${subtotal}</span></td>
+                    </tr>
+                    <tr>
+                        <td style="color: #868686; font-weight: 500; padding: 5px 0px; width: 50%;"><span>Promotion</span></td>
+                        <td style="text-align: end; font-weight: 600; color: #33A458; font-size: 15px;"><span>-${Promotion}</span></td>
+                    </tr>
+                    <!--<tr>
+
+                        <td style="color: #868686; font-weight: 500; width: 50%;"><span>Trip Charge</span></td>
+                        <td style="text-align: end; font-weight: 600; color: #868686; font-size: 15px;"><span>{subtotal}</span></td>
+                    </tr>-->
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="border-bottom: 2px solid #c7c7c7; width: 100%;">
+                    <tr>
+                        <td style="color: #868686; font-weight: 500; width: 50%;"><span>Cancellation Fee</span></td>
+                        <td style="text-align: end; font-weight: 600; color: #868686; font-size: 15px;"><span>${cancellationfee}</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="border-bottom: 2px solid #c7c7c7; width: 100%; margin-top: 40px;"></table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="padding: 10px 0px; width: 100%;">
+                    <tr>
+                        <td style="font-weight: 500; color: #010101; padding: 5px 0px; font-size: 22px;"><span>Payments</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="padding: 10px 0px; width: 100%;">
+                    <tr>
+                        <td style="width: 50px;"><img src="{coinPath}" style="width: 30px; height: auto;" alt=""></td>
+                        <td>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="font-weight: 600; color: #010101; font-size: 15px;"><span>{paymentmode}</span></td>
+                                </tr>
+                                 <tr> 
+                                 <td style="font-weight: 500; color: #868686; font-size: 15px;"><span>{paymenttime}</span></td> 
+                                 </tr> 
+                            </table>
+                        </td>
+                        <td style="color: #010101; font-size: 18px; font-weight: 500; width: 50%;"><span>${Total}</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="border-bottom: 2px solid #c7c7c7; width: 100%; margin-top: 40px;"></table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; margin-top: 20px;">
+                    <tr>
+                        <td style="color: #010101;"><span>You rode with {DriverName}</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="color: #868686; font-weight: 500; font-size: 12px;">
+                            <span>License Plate: {VehiclePlate}</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin-top: 20px;">
+                    <tr>
+                        <td style="color: #010101; font-weight: 600; font-size: 14px;"><span>{category}</span></td>
+                        <td style="padding: 0px 20px; color: #868686;">{totaldistance} mile</td>
+                    </tr>
+                    <tr>
+                        <td style="color: #868686; font-weight: 600; font-size: 12px; text-align: left;"><span>{min} min</span></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width: 100%; margin-top: 20px;">
+                    <tr>
+                        <td style="text-align: center; vertical-align: top;">
+                            <div style="width: 0px; height: 0px; border: 5px solid #010101; margin: auto;"></div>
+                            <div style="width: 0px; border: 1px solid #010101; min-height: 40px; margin: auto;"></div>
+                        </td>
+                        <td style="padding: 0px 10px; vertical-align: top; color: #868686; font-weight: 500;">
+                            <span style="color: #010101; font-weight: 600;">Source : </span>| {SourceName}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center; vertical-align: top;">
+                            <div style="width: 0px; height: 0px; border: 5px solid #010101; margin: auto;"></div>
+                        </td>
+                        <td style="padding: 0px 10px; vertical-align: top; color: #868686; font-weight: 500;">
+                            <span style="color: #010101; font-weight: 600;">Destination :  </span>| {DestinationName}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

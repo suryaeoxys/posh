@@ -1,0 +1,83 @@
+name: Staging Build & Deploy PoshApp
+
+on:
+   workflow_dispatch:  
+  #push:
+  #  branches: [ "feature/git-workflow" ]
+  #pull_request:
+  #  branches: [ "feature/git-workflow" ]
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.*
+
+    - name: Build
+      run: dotnet build POSH-TRPT/Posh-TRPT/Posh-TRPT.sln
+
+    - name: Publish
+      run: dotnet publish  POSH-TRPT/Posh-TRPT/Posh-TRPT.sln --configuration Release --output publish
+
+    - name: App Settings Variable Substitution
+      uses: microsoft/variable-substitution@v1
+      with:
+          files: '/home/runner/work/POSH-App/POSH-App/publish/appsettings.json'
+      env:          
+          ConnectionStrings: ${{ secrets.CONNECTIONSTRINGS }}
+          DistanceMatrixAPI: ${{ secrets.DISTANCEMATRIXAPI }}
+          EmailConfiguration: ${{ secrets.EMAILCONFIGURATION }}
+          FcmNotification: ${{ secrets.FCMNOTIFICATION }}
+          JWT: ${{ secrets.JWT }}
+          LocalUrl: ${{ secrets.LOCALURL }}
+          Request: ${{ secrets.REQUEST }}
+          RiderRequestForNewRide: ${{ secrets.RIDERREQUESTFORNEWRIDE }}
+          StripeSettings: ${{ secrets.STRIPESETTINGS }}
+          TwillioConfiguration: ${{ secrets.TWILLIOCONFIGURATION }}
+
+
+    - name: Zip Artifact
+      uses: vimtor/action-zip@v1
+      with:
+        files: publish
+        dest: publish.zip
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: app-posh
+        path: publish.zip
+        
+  deploy:
+      runs-on: ubuntu-latest
+      needs: build
+      steps:
+
+         - name: Download artifact
+           uses: actions/download-artifact@v2
+           with:
+             name: app-posh
+             
+         - name : Unzip
+           uses: montudor/action-zip@v1
+           with:
+            args: unzip -qq publish.zip -d poshapp
+        
+         - name: Copy to Target Server
+           uses: appleboy/scp-action@v0.1.7
+           with:
+            host: ${{ secrets.HOST }}
+            username: Administrator
+            password: ${{ secrets.PASSWORD }}
+            port: 22
+            source: ./poshapp/*
+            TARGET: C:\inetpub\wwwroot

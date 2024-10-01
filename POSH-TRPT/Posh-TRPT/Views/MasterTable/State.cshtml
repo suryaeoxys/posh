@@ -1,0 +1,89 @@
+﻿
+@{
+    ViewData["Title"] = "State";
+}
+
+<div class="container-fluid" id="datatable_MainDiv">
+    <div class="row heading-section pt-3">
+        <div class="col-sm-6 col-6 heading-div d-flex align-items-center">
+            <h2 style="color : #501872" class="user-texts m-0">States</h2>
+        </div>
+
+        <div class="col-sm-6 col-6 text-end">
+            <a style="background: #501872; font-size:18px;"  class="btn btn-Add respo-txt text-white "   onclick="OpenStateForm(null)"><i class="fa fa-plus pr-1"></i> Add State</a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive table customTable mt-4">
+                <table id="datatble_CountryList" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Country Name</th>
+                            <th>State Name</th>
+
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid" style="display:none" id="newStateAdd">
+    <form method="post" enctype="multipart/form-data" id="newStateAddForm">
+        <div class="create-from">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="row cstmroww @*justify-content-center align-items-center*@ m-0">
+                        <div class="col-md-4 country-txt p-3">
+                            <label class="pb-2">Country Name <span class="text-danger">*</span></label>
+                            <select class="form-control border-3 mb-2" id="bindstateCountryDropdown" ></select>
+                            <span role="alert" class="small" id="conBinderror" style="display:none">
+                            </span>
+                        </div>
+       
+                        <div class="col-md-3 country-txt p-3">
+                            <label class="pb-2">State Name<span class="text-danger">*</span></label>
+                             <input id="state_id" hidden />
+                            <input type="text" class="form-control border-3 mb-2" id="StateName" placeholder="Enter State Name">
+                            <span  role="alert" class="small" id="errState" style="display:none">
+                            </span>
+                        </div>
+
+                        <div class="col-md-3 country-txt p-3">
+                            <label class="pb-2">State Code<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control border-3 mb-2" id="StateCodeName" placeholder="Enter State Code">
+                            <span role="alert" class="small" id="errStateCode" style="display:none">
+                            </span>
+                        </div>
+                        <div class="modal-footer modals @*justify-content-center align-items-center*@ modals p-3">
+                            <input type="submit" value="Save" id="EditButton" style="font-size:18px;" class="btn cstm-btn p-2 px-4 btn-Add" />
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+@section Scripts
+{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+    <script type="text/javascript" charset="utf8" src="~/js/custom/MasterTable.js"></script>
+
+}
+
+

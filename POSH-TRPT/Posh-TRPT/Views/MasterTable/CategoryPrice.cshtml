@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "CategoryPrice";
+}
+
+
+<div class="container-fluid" id="datatable_CategoryPrice_MainDiv">
+    <div class="row heading-section py-3">
+        <div class="col-sm-6 col-6 heading-div d-flex align-items-center">
+            <h2 style="color : #501872" class="user-texts">Category Price</h2>
+        </div>
+
+        <div class="col-sm-6 col-6 text-end">
+            <a style="background: #501872; font-size:18px;" class="btn btn-Add text-white " onclick="OpenCategoryPriceForm(null)"><i class="fa fa-plus pr-1"></i> Add Category Price</a>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive table customTable mt-2">
+                <table id="datatble_CategoryPriceList" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Country Name</th>
+                            <th>State Name</th>
+                            <th>City Name</th>
+                            <th>Base Fare</th>
+                            <th>Cost Per Mile</th>
+                            <th>Cost Per Minute</th>
+                            <th>Ride Category Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid" style="display:none" id="newCategoryPriceAdd">
+    <form method="post" enctype="multipart/form-data" id="newCategoryPriceAddForm">
+        <div class="create-from">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="row cstmroww m-0">
+                        <div class="col-md-4 country-txt pb-3">
+                            <input hidden id="CategoryPrice_Id" />
+                            <label class="pb-2">Country Name <span class="text-danger">*</span></label>
+                            <select class="form-control border-3 mb-2" id="bindCountryDropdown" onchange="Country()"></select>
+                            <span role="alert" id="cpCountryError" style="display:none">
+                            </span>
+                        </div>
+                        <div class="col-md-4 country-txt pb-3">
+                            <label class="pb-2">State Name <span class="text-danger">*</span></label>
+                            <select class="form-control border-3 mb-2 bindStateDropdown" id="bindStateDropdown" onchange="State()"></select>
+                            <span role="alert" id="cpStateError" style="display:none">
+                            </span>
+                        </div>
+                        <div class="col-md-4 country-txt pb-3">
+                            <label class="pb-2">City Name <span class="text-danger">*</span></label>
+                            <select class="form-control border-3 mb-2 " id="bindCityDropdown" onchange="City()"></select>
+                            <span role="alert" id="cpCityError" style="display:none">
+                            </span>
+                        </div>
+                        <div class="col-md-4 country-txt pb-3">
+                            <label class="pb-2">Ride Category Name <span class="text-danger">*</span></label>
+                            <select class="form-control border-3 mb-2" id="bindRideCategoryDropdown" onchange="RideCategory()"></select>
+                            <span role="alert" id="cpRideCategoryError" style="display:none">
+                            </span>
+                        </div>
+                        <div class="col-md-4 country-txt pb-3">
+                            <label class="pb-2">Base Fare <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="BaseFare" step="0.01" placeholder="Enter Base Fare" min="0.5">
+                            <span role="alert" id="cpBaseFareError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-4 country-txt pb-3">
+                            <label class="pb-2">Cancel Penalty ( % ) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Cancel_Penalty" step="0.01" placeholder="Enter Cancel Penalty" min="0.1">
+                            <span role="alert" id="cpCancelPaneltyError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Cost Per Mile <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Cost_Per_Mile" step="0.01" placeholder="Enter Cost Per Mile" min="0.5">
+                            <span role="alert" id="cpCostPerMileError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Cost Per Minute <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Cost_Per_Minute" step="0.01" placeholder="Enter Cost Per Minute" min="0.5">
+                            <span role="alert" id="cpCostPerMiniuteError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Maximum Fare <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Maximum_Fare" step="0.01" placeholder="Enter Maximum Fare" min="0.5" onchange="checkValuesForMax()">
+                            <span role="alert" id="cpMaxFareError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Minimum Fare <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Minimum_Fare" step="0.01" placeholder="Enter Minimum Fare" min="0.5" onchange="checkValuesForMin()">
+                            <span role="alert" id="cpMinFareError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Scheduled Cancel Penalty ( % ) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Sched_Cancel_Penalty" step="0.01" placeholder="Enter Scheduled Cancel Penalty" min="0.1">
+                            <span role="alert" id="cpSchCanPanError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Scheduled Ride Minimum Fare <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Sched_Ride_Minimum_Fare" step="0.01" placeholder="Enter Scheduled Ride Minimum Fare" min="0.5">
+                            <span role="alert" id="cpSchRideMinFareError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Service Fee ( % ) <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Service_Fee" step="0.01" placeholder="Enter Service Fee" min="0.1">
+                            <span role="alert" id="cpServiceFeeError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Toll Fare <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Toll_Fares" step="0.01" placeholder="Enter Toll Fare" min="0.5">
+                            <span role="alert" id="cpTollFareError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Airport Fee <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="Airport_Fees" step="0.01" placeholder="Enter Airport Fee" min="0.5">
+                            <span role="alert" id="cpAirFeesError" style="display:none"></span>
+                        </div>
+                        <div class="col-md-3 country-txt pb-3">
+                            <label class="pb-2">Bonus % <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control border-3 mb-2" id="bonus_Fees" step="0.01" placeholder="Enter Bonus Amount" min="0.5">
+                            <span role="alert" id="cpAirFeesError" style="display:none"></span>
+                        </div>
+                        <div class="modal-footer modals p-3">
+                            <input type="submit" value="Save" style="font-size:18px;" id="EditButton" class="btn cstm-btn px-4 btn-Add" />
+                            <input type="button" value="Close" style="font-size:18px;margin-left:20px" onclick="CloseCategoryPriceForm()" class="btn cstm-btn1 px-4 btn-closed ml-5" />                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+@section Scripts
+    {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="~/js/custom/mastertable.js"></script>           
+}

@@ -1,0 +1,128 @@
+@media (max-width: 600px){
+    #left-sidebar{
+        display:none;
+    }
+    .dataTables_info{
+        margin-bottom:20px
+    }
+    #right-sidebar{
+        margin-left:0px;
+    }
+    .usersda-tatab{
+        justify-content: space-between;
+    }
+    .usersda-tatab .nav-item{
+        width:50%;
+     
+        border-radius:0px;
+    }
+    .card-header .nav {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        -webkit-flex-wrap: wrap;
+        overflow-y: hidden;
+        -ms-flex-wrap: wrap;
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+        justify-content: space-around;
+        align-items: stretch;
+        flex-direction: inherit;
+        align-content: stretch;
+    }
+    .table-responsive {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    #custom-tabs-five-tab {
+        flex-wrap: inherit;
+        display: -webkit-box;
+    }
+    
+    
+    
+}
+@media (max-width: 800px){
+    #left-sidebar{
+        display:none;
+    }
+    #right-sidebar{
+        margin-left:0px;
+    }
+    .main-logo {
+        width: 150px;
+    }
+    .sidebar-toggler{
+        background: green;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 50%;
+        margin-top:-20px;
+    }
+    .main-content {
+        padding: 8.5rem .5rem;
+        display: block;
+        background-color: #f4f6f9;
+    }
+    .nav-tabs .nav-link {
+        font-size: 12px;
+    }
+    .visible-sm {
+        display: block;
+    }
+    .mobile-header-section .nav-link {
+        color: rgba(0,0,0,.5);
+    }
+    .product-list-in-card .product-info h5{
+        float:right
+    }
+    
+    
+}
+
+@media(min-width:760px) and (max-width:880px){
+   
+    
+    
+}
+@media(min-width:1000px) and (max-width:1100px){
+    #left-sidebar{
+        width: 67px;
+    }
+    .hidden-mobile{
+        display:block;
+    }
+    #right-sidebar {
+        transition: margin-left .3s ease-in-out;
+        margin-left: 60px;
+        min-height: 300px;
+    }
+ 
+    .col-lg-9,.tab-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .usersda-tatab .nav-link {
+        font-size: 12px;
+        margin-right: 20px;
+    }
+
+}
+@media(min-width:1600px){
+    #custom-tabs-five-tab .nav-link{
+        font-size: 20px;
+    } 
+    .datatable  svg{
+        height:20px
+    }
+    .usersda-tatab .nav-link {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+}

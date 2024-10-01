@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Posh-TRPT", "Posh-TRPT.csproj", "{880FF158-05DF-4AD8-BE94-6CFAFE1CACC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Posh-TRPT_Domain", "..\Posh-TRPT_Domain\Posh-TRPT_Domain.csproj", "{5519AEA8-8304-4854-ABCD-16AD40567E1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Posh-TRPT_Infrastructure", "..\Posh-TRPT_Infrastructure\Posh-TRPT_Infrastructure.csproj", "{C8E9C219-6A81-4C23-8600-FA74D7376A84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Posh-TRPT_Models", "..\Posh-TRPT_Models\Posh-TRPT_Models.csproj", "{2C529BB5-B675-4109-A1BB-628F8DD54980}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Posh-TRPT_Services", "..\Posh-TRPT_Services\Posh-TRPT_Services.csproj", "{5CF26FD8-F58A-405C-9E87-D4247F59BFA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Posh-TRPT_Utility", "..\Posh-TRPT_Utility\Posh-TRPT_Utility.csproj", "{31DC9728-E508-4608-8F09-F991A051A85F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{880FF158-05DF-4AD8-BE94-6CFAFE1CACC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{880FF158-05DF-4AD8-BE94-6CFAFE1CACC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{880FF158-05DF-4AD8-BE94-6CFAFE1CACC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{880FF158-05DF-4AD8-BE94-6CFAFE1CACC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5519AEA8-8304-4854-ABCD-16AD40567E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5519AEA8-8304-4854-ABCD-16AD40567E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5519AEA8-8304-4854-ABCD-16AD40567E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5519AEA8-8304-4854-ABCD-16AD40567E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E9C219-6A81-4C23-8600-FA74D7376A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E9C219-6A81-4C23-8600-FA74D7376A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E9C219-6A81-4C23-8600-FA74D7376A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E9C219-6A81-4C23-8600-FA74D7376A84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C529BB5-B675-4109-A1BB-628F8DD54980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C529BB5-B675-4109-A1BB-628F8DD54980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C529BB5-B675-4109-A1BB-628F8DD54980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C529BB5-B675-4109-A1BB-628F8DD54980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF26FD8-F58A-405C-9E87-D4247F59BFA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF26FD8-F58A-405C-9E87-D4247F59BFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF26FD8-F58A-405C-9E87-D4247F59BFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF26FD8-F58A-405C-9E87-D4247F59BFA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31DC9728-E508-4608-8F09-F991A051A85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31DC9728-E508-4608-8F09-F991A051A85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31DC9728-E508-4608-8F09-F991A051A85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31DC9728-E508-4608-8F09-F991A051A85F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85854A53-3C9C-4A57-8831-320F810259A4}
+	EndGlobalSection
+	
+EndGlobal
